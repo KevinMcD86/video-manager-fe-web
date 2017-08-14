@@ -1,0 +1,9 @@
+
+<div *ngIf="checkVideoAndSeriesLoaded()">
+    <a (click)="goBack()">Back</a>
+    <h2>{{video.title}}!</h2>
+    <video width="100%" height="auto" controls autoplay>
+      <source src="{{videoUrl}}" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+</div>

@@ -1,0 +1,18 @@
+<a [routerLink]="['/media-collection']">Back to Shows</a>
+
+<form class="well" (submit)="addVideo($event)">
+      <div class="form-group">
+        <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Add Video...">    
+      </div>
+</form>
+
+<div class="video-list">
+    <div *ngFor="let video of videos" class="episode-list">
+        <div class="col-lg-3">
+            <img class="thumbnail" [src]="video.getScreenshotUrl()" alt="video" [routerLink]="['/episodes', video._id]"/> 
+            <a class="episode" [routerLink]="['/episodes', video._id]">
+                {{video.episode}}. {{video.title}} 
+            </a>
+        </div>
+    </div>
+</div>

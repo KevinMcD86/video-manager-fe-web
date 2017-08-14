@@ -1,0 +1,10 @@
+<div class="video-list">
+    <div *ngFor="let seriesItem of series">
+        <div class="col-lg-3">
+            <img class="thumbnail" [src]="seriesItem.getScreenshotUrl()" alt="video" [routerLink]="['/series', seriesItem._id]"/>
+            <a [routerLink]="['/series', seriesItem._id]">
+                {{seriesItem.title}}
+            </a>
+        </div>
+    </div>
+</div>
