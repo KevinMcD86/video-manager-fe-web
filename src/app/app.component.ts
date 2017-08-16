@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VideoService} from './services/video.service';
-import { EnvironmentVariableService } from './services/environment-variables.service';
+import { FacebookService } from './services/facebook.service';
 
 @Component({
   moduleId: module.id,
@@ -11,10 +11,11 @@ import { EnvironmentVariableService } from './services/environment-variables.ser
 export class AppComponent implements OnInit{
   title = 'app';
   
-  envVars: Object;
-  constructor(private envVarsSrvc: EnvironmentVariableService) { }
+  constructor(private facebookService : FacebookService) { 
+  }
 
   ngOnInit(){
-    this.envVars = this.envVarsSrvc.config;
+    console.log("FB Logged in? : " + this.facebookService.Loggedin );    
+    
   }
 }

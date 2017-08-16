@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VideoService } from '../../services/video.service';
+import { FacebookService } from '../../services/facebook.service'
 import { Series } from '../../../data_entities/series';
 import { Movie } from '../../../data_entities/movie';
 
@@ -13,7 +14,8 @@ export class MediaCollectionComponent {
     series : Series[] = new Array();
     movies : Movie[] = new Array();
 
-    constructor(private videoService: VideoService) {
+    constructor(private videoService: VideoService, private facebookService : FacebookService) {
+        console.log("Authenticated user: " + facebookService.AccessToken)
         this.videoService.getSeries()
             .subscribe(series => {
                 for(var i = 0; i < series.length; i++) {

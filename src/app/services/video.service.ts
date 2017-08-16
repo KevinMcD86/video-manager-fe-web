@@ -12,7 +12,7 @@ export class VideoService {
     ApiSource : string;
     
     constructor(private http: Http, private _envVar : EnvironmentVariableService) { 
-        this.ApiSource = _envVar.config['apiSource']
+        this.ApiSource = _envVar.get('apiSource');
     }
 
     getEpisodes(seriesId) {

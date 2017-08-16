@@ -1,5 +1,6 @@
 {
     "videoLibrarySource" : "../../../assets/videos/",
     "pictureLibrarySource" : "../../../assets/pictures/",
-    "apiSource" : "http://localhost:3000/api/"
+    "apiSource" : "http://localhost:3000/api/",
+    "facebookAppId" : "na"
 }
